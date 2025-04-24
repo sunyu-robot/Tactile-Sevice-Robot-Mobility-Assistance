@@ -41,7 +41,7 @@ public:
     * @param[in] &input        joints' position
     */
     void updatedata(const Vector15d q, sphere (&point_sphere)[35]);
-
+    
     void pointMarker(visualization_msgs::MarkerArray &marker_array, const sphere* point_sphere);
 
 private:

@@ -6,8 +6,8 @@ Simulation of dual-arm walking-assistive robot based on ROS.
 sudo apt-get update
 sudo apt-get install ros-noetic-pinocchio
 sudo apt-get install ros-noetic-ur-description
-git clone https://github.com/Lipeng-Robotics/tencent_zju_joint_project.git
-cd src/pinocchio_sim_ws
+git clone https://github.com/sunyu-robot/Tactile-Sevice-Robot-Mobility-Assistance.git
+cd Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws
 catkin clean
 ```
 
@@ -18,8 +18,6 @@ ROS-noetic : Robot Operating System https://www.ros.org/
 OSQP0.6.0 : https://github.com/osqp/osqp/
 
 OSQP - EIGEN 0.7.0 : https://github.com/robotology/osqp-eigen
-
-可能会遇到找不到osqp.h的问题，参考 [https://blog.csdn.net/superem_/article/details/122705374?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522172109729616800172530264%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&amp;request_id=172109729616800172530264&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-2-122705374-null-null.142^v100^pc_search_result_base6&amp;utm_term=%23include%20%3Cosqp%2Fauxil.h%3E%20%23include%20%3Cosqp%2Fscaling.h%3E&amp;spm=1018.2226.3001.4187]()
 
 Sophus1.x : https://github.com/strasdat/Sophus
 
@@ -57,6 +55,6 @@ A whole-body adaptive admittance control strategy for whole-body compliance
 
 ROS message types
 
-## Preview
+## PREVIEW
 
 ![anim](robot.gif)
