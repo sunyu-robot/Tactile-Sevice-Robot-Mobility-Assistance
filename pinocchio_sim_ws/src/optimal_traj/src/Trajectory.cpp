@@ -114,31 +114,6 @@ Eigen::Matrix3d eulerZYXToRotationMatrix(double yaw, double pitch, double roll) 
 
 void OptimalTrajectory::getDesiredRotation()
 {
-    // double a = human_rotation_matrix(0,2);
-    // double b = human_rotation_matrix(1,2);
-    // double c = human_rotation_matrix(2,2);
-
-    // if (a == 0 && b == 0 && c == 1) {
-    //     rotation_matrix_d = human_rotation_matrix;
-    //     return;
-    // }
-    // Vector3d euler_xyz;
-    // euler_xyz = human_rotation_matrix.eulerAngles(0,1,2);
-    // double theta = euler_xyz(0);
-    // double phi = euler_xyz(1);
-    // Matrix3d Rx, Ry;
-    // Ry(0, 0) = cos(phi); Ry(0, 2) = sin(phi);
-    // Ry(1, 1) = 1;
-    // Ry(2, 0) = -sin(phi); Ry(2, 2) = cos(phi);
-    // Rx(0, 0) = 1;
-    // Rx(1, 1) = cos(theta); Rx(1, 2) = -sin(theta);
-    // Rx(2, 1) = sin(theta); Rx(2, 2) = cos(theta);
-    // rotation_matrix_d = Ry.transpose() * Rx.transpose() * human_rotation_matrix;
-    // double theta = euler_xyz(2);
-    // rotation_matrix_d.setZero();
-    // rotation_matrix_d(2, 2) = 1;
-    // rotation_matrix_d(0, 0) = cos(theta); rotation_matrix_d(0, 1) = -sin(theta);
-    // rotation_matrix_d(1, 0) = sin(theta); rotation_matrix_d(1, 1) = cos(theta);
 
     double ag_d =  acos( human_rotation_matrix(0, 0) / sqrt(human_rotation_matrix(0, 0)*human_rotation_matrix(0, 0) + human_rotation_matrix(0, 1)*human_rotation_matrix(0, 1)));
     double aa_d = human_rotation_matrix(0,0);
@@ -175,11 +150,6 @@ void OptimalTrajectory::getDesiredRotation()
     std::cout << "y: " << phi_d << std::endl;
     std::cout << "z: " << theta_d << std::endl;
     std::cout << "x: " << beta_d << std::endl;
-    // rotation_matrix_d.setZero();
-    // rotation_matrix_d(2, 2) = 1;
-    // rotation_matrix_d(0, 0) = cos(ag); rotation_matrix_d(0, 1) = -sin(ag);
-    // rotation_matrix_d(1, 0) = sin(ag); rotation_matrix_d(1, 1) = cos(ag);
-    // euler_angle_d << euler_xyz(2), 0, 0;
 
     euler_angle_d << ag_d, 0, 0;
 }
@@ -235,20 +205,14 @@ void OptimalTrajectory::getHumanPose()
 {
     // human pose, Kalman filter etc.
     double cur_angle = 3.1415926/10;
-    // cur_angle = 0;
-    // euler_angle << 0, 0, 0.1;
-    // human_position << 1.1, 0, c/2;
     angular_vel << 0, 0, 0;
     com_vel << 0, 0, 0;
-    // contact_left << 
+
 
     contact_position_left = human_rotation_matrix.transpose()*(contact_left - human_position);
     contact_position_right = human_rotation_matrix.transpose()*(contact_right - human_position);
 
     // q0
-    // q0(0) = constrainAngle(euler_angle(0));
-    // q0(1) = constrainAngle(euler_angle(1));
-    // q0(2) = constrainAngle(euler_angle(2));
     getDesiredRotation();
     std::cout << "human_rotation_matrix: " << human_rotation_matrix << std::endl;
     q0(0) = euler_angle(0);
@@ -270,25 +234,7 @@ void OptimalTrajectory::getHumanPose()
     q0(15) = dummy_tactile_right(0);
     q0(16) = dummy_tactile_right(1);
     q0(17) = dummy_tactile_right(2);
-
-    // for(int i = 12; i < 18; i++){
-    //     q0(i) = X_ref(i);
-    // }
     
-    // double z = 0, y = 0, x = cur_angle;
-    // rotation matrix
-    // Matrix3d Rz = Matrix3d::Zero(), Ry = Matrix3d::Zero(), Rx = Matrix3d::Zero(), R = Matrix3d::Zero();
-    // Rz(0, 0) = cos(z); Rz(0, 1) = -sin(z);
-    // Rz(1, 0) = sin(z); Rz(1, 1) = cos(z);
-    // Rz(2, 2) = 1;
-    // Ry(0, 0) = cos(y); Ry(0, 2) = sin(y);
-    // Ry(1, 1) = 1;
-    // Ry(2, 0) = -sin(y); Ry(2, 2) = cos(y);
-    // Rx(0, 0) = 1;
-    // Rx(1, 1) = cos(x); Rx(1, 2) = -sin(x);
-    // Rx(2, 1) = sin(x); Rx(2, 2) = cos(x);
-    // R = Rz * Ry * Rx;
-    // human_rotation_matrix = R;
     Vector3d pos_base;
     pos_base = human_position + human_rotation_matrix*L;
     // std::cout << "pos_base: " << pos_base.transpose() << std::endl;
@@ -368,26 +314,6 @@ void OptimalTrajectory::centroidalNMPC()
     casadiOptions["ipopt.warm_start_init_point"] = "yes";
     casadiOptions["ipopt.acceptable_tol"]        = 1e-5;
     casadiOptions["ipopt.tol"]        = 1e-5;
-    // casadi::Dict osqpOptions;
-    // casadi::Dict solverOptions;
-    // casadiOptions["print_header"] = true;
-    // casadiOptions["print_iteration"] = false;
-    // casadiOptions["print_status"] = true;
-    // casadiOptions["print_time"] = true;
-    // osqpOptions["verbose"] = false;
-    // casadiOptions["error_on_fail"] = false;
-    // casadiOptions["expand"] = true;
-    // osqpOptions["verbose"] = false;
-
-    // solverOptions["error_on_fail"] = false;
-    // solverOptions["osqp"] = osqpOptions;
-    // casadiOptions["qpsol"] = "osqp";
-    // casadiOptions["qpsol_options"] = solverOptions;
-    // solverOptions["tol"] = 1e-4;
-    // casadiOptions["max_iter"] = 5000;
-    // casadiOptions["init_feasible"] = true;
-
-    // nmpc.solver("sqpmethod", casadiOptions);
     nmpc.solver("ipopt", casadiOptions);
     OptiSol sol = nmpc.solve();   // actual solve
     // solution

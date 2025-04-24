@@ -1,0 +1,8 @@
+prefix=/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/install
+
+Name: util_msgs
+Description: Description of util_msgs
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

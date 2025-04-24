@@ -179,16 +179,6 @@ void TactileCompliance::tactileTrack(const Vector15d q_real, const Vector15d dq_
         skinstates[i].x_newdesire_skin = skinstates[i].x_error + skinstates[i].x_desire_skin;
         skinstates[i].dx_real_skin = skinstates[i].jacobian_matrix_linear * dq_real;
         skinstates[i].x_track = skinstates[i].x_newdesire_skin - skinstates[i].x_real_skin + skinstates[i].dx_newdesire_skin;
-        // if(i == 0){
-        //     skinstates[0].dx_desire_skin = dp_left;
-        //     dp_left_accu += dp_left * loop_time;
-        //     skinstates[i].x_track += dp_left_accu;
-        // }
-        // else if(i == 1){
-        //     skinstates[1].dx_desire_skin = dp_right;
-        //     dp_right_accu += dp_right * loop_time;
-        //     skinstates[i].x_track += dp_right_accu;
-        // }
 
         skinstates[i].dx_track = skinstates[i].x_track * Kp  + ( - skinstates[i].dx_real_skin) * Kd;
         std::cout << "skinstates[" << i << "].dx_newdesire_skin" << skinstates[i].dx_newdesire_skin.transpose() << std::endl;

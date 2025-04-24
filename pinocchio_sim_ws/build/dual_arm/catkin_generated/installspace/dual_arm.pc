@@ -1,0 +1,8 @@
+prefix=/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/install
+
+Name: dual_arm
+Description: Description of dual_arm
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
