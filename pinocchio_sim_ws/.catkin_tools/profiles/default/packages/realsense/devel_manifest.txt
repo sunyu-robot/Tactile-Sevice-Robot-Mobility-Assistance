@@ -1,0 +1,9 @@
+realsense
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/realsense/cmake.lock /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/./cmake.lock
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/realsense/share/realsense/cmake/realsenseConfig-version.cmake /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/share/realsense/cmake/realsenseConfig-version.cmake
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/realsense/share/realsense/cmake/realsenseConfig.cmake /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/share/realsense/cmake/realsenseConfig.cmake
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/realsense/lib/pkgconfig/realsense.pc /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/lib/pkgconfig/realsense.pc
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/realsense/lib/realsense/cmake.lock /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/lib/realsense/cmake.lock
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/realsense/lib/realsense/intent_openpose.py /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/lib/realsense/intent_openpose.py
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/realsense/lib/realsense/intent_mediapipe.py /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/lib/realsense/intent_mediapipe.py
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/realsense/lib/realsense/realsense.py /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/lib/realsense/realsense.py

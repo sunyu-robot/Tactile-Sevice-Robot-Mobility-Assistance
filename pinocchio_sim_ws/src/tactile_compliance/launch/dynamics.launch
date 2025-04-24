@@ -1,0 +1,17 @@
+<launch>
+  <!-- <include file="$(find dual_arm)/launch/rviz_gazebo.launch" /> -->
+  <!-- <param name="urdf_filename" value="/home/sunyu/pinocchio_sim_ws/src/dual_arm/robot_description/urdf/wholebody.urdf" />
+  <param name="srdf_filename" value="/home/sunyu/pinocchio_sim_ws/src/dual_arm/robot_description/srdf/wholebody.srdf" />
+  <param name="DEBUG" value="false" />
+  <param name="OBSTACLE_AVOIDANCE" value="true" /> -->
+  <!-- <param name="VISUALIZER" value="false" /> -->
+  
+  <arg name="PARAMS_FILE" default="$(find tactile_compliance)/config/initial_params.yaml" />
+  <rosparam file="$(arg PARAMS_FILE)" command="load" />
+    
+<!-- launch-prefix="xterm -e gdb -ex run -args" -->
+    <node name="tactile_compliance" pkg="tactile_compliance" type="init" output="screen"/>
+ 
+
+
+</launch>

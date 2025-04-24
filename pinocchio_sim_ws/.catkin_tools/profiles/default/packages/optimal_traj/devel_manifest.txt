@@ -1,0 +1,7 @@
+optimal_traj
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/optimal_traj/cmake.lock /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/./cmake.lock
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/optimal_traj/share/optimal_traj/cmake/optimal_trajConfig.cmake /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/share/optimal_traj/cmake/optimal_trajConfig.cmake
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/optimal_traj/share/optimal_traj/cmake/optimal_trajConfig-version.cmake /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/share/optimal_traj/cmake/optimal_trajConfig-version.cmake
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/optimal_traj/lib/liboptimal_traj.so /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/lib/liboptimal_traj.so
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/optimal_traj/lib/pkgconfig/optimal_traj.pc /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/lib/pkgconfig/optimal_traj.pc

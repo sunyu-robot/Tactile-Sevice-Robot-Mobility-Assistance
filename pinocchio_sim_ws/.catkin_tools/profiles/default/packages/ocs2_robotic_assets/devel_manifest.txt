@@ -1,0 +1,5 @@
+ocs2_robotic_assets
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/ocs2_robotic_assets/cmake.lock /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/./cmake.lock
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/ocs2_robotic_assets/share/ocs2_robotic_assets/cmake/ocs2_robotic_assetsConfig-version.cmake /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/share/ocs2_robotic_assets/cmake/ocs2_robotic_assetsConfig-version.cmake
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/ocs2_robotic_assets/share/ocs2_robotic_assets/cmake/ocs2_robotic_assetsConfig.cmake /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/share/ocs2_robotic_assets/cmake/ocs2_robotic_assetsConfig.cmake
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/ocs2_robotic_assets/lib/pkgconfig/ocs2_robotic_assets.pc /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/lib/pkgconfig/ocs2_robotic_assets.pc

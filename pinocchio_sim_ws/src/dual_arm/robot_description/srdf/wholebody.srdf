@@ -1,0 +1,129 @@
+<?xml version="1.0" ?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="dual_arm">
+
+    <!-- <group name="mecanum">
+        <link name="x_dir_link" />
+        <link name="y_dir_link" />
+        <link name="mecanum_base" />
+    </group>
+
+    <group name="right_arm">
+        <chain base_link="R_base_link_inertia" tip_link="R_wrist_3_link" />
+    </group>
+
+    <group name="left_arm">
+        <chain base_link="L_base_link_inertia" tip_link="L_wrist_3_link" />
+    </group>
+    
+    <group name="whole_body">
+        <group name="mecanum" />
+        <group name="right_arm" />
+        <group name="left_arm" />
+    </group>
+
+    <group_state name="left_init_pose" group="left_arm">
+        <joint name="L_shoulder_pan_joint" value="0" />
+        <joint name="L_shoulder_lift_joint" value="0" />
+        <joint name="L_elbow_joint" value="0" />
+        <joint name="L_wrist_1_joint" value="0" />
+        <joint name="L_wrist_2_joint" value="0" />
+        <joint name="L_wrist_3_joint" value="0" />
+    </group_state>
+    <group_state name="right_init_pose" group="right_arm">
+        <joint name="R_shoulder_pan_joint" value="0" />
+        <joint name="R_shoulder_lift_joint" value="0" />
+        <joint name="R_elbow_joint" value="0" />
+        <joint name="R_wrist_1_joint" value="0" />
+        <joint name="R_wrist_2_joint" value="0" />
+        <joint name="R_wrist_3_joint" value="0" />
+    </group_state> -->
+
+
+    <!-- <disable_collisions link1="x_dir_link" link2="y_dir_link" />
+    <disable_collisions link1="x_dir_link" link2="mecanum_base" />
+    <disable_collisions link1="x_dir_link" link2="R_base_link_inertia" />
+    <disable_collisions link1="x_dir_link" link2="R_shoulder_link" />
+    <disable_collisions link1="x_dir_link" link2="R_upper_arm_link" />
+    <disable_collisions link1="x_dir_link" link2="R_forearm_link" />
+    <disable_collisions link1="x_dir_link" link2="R_wrist_1_link" />
+    <disable_collisions link1="x_dir_link" link2="R_wrist_2_link" />
+    <disable_collisions link1="x_dir_link" link2="R_wrist_3_link" />
+    <disable_collisions link1="x_dir_link" link2="L_base_link_inertia" />
+    <disable_collisions link1="x_dir_link" link2="L_shoulder_link" />
+    <disable_collisions link1="x_dir_link" link2="L_upper_arm_link" />
+    <disable_collisions link1="x_dir_link" link2="L_forearm_link" />
+    <disable_collisions link1="x_dir_link" link2="L_wrist_1_link" />
+    <disable_collisions link1="x_dir_link" link2="L_wrist_2_link" />
+    <disable_collisions link1="x_dir_link" link2="L_wrist_3_link" />
+
+    <disable_collisions link1="y_dir_link" link2="mecanum_base" />
+    <disable_collisions link1="y_dir_link" link2="R_base_link_inertia" />
+    <disable_collisions link1="y_dir_link" link2="R_shoulder_link" />
+    <disable_collisions link1="y_dir_link" link2="R_upper_arm_link" />
+    <disable_collisions link1="y_dir_link" link2="R_forearm_link" />
+    <disable_collisions link1="y_dir_link" link2="R_wrist_1_link" />
+    <disable_collisions link1="y_dir_link" link2="R_wrist_2_link" />
+    <disable_collisions link1="y_dir_link" link2="R_wrist_3_link" />
+    <disable_collisions link1="y_dir_link" link2="L_base_link_inertia" />
+    <disable_collisions link1="y_dir_link" link2="L_shoulder_link" />
+    <disable_collisions link1="y_dir_link" link2="L_upper_arm_link" />
+    <disable_collisions link1="y_dir_link" link2="L_forearm_link" />
+    <disable_collisions link1="y_dir_link" link2="L_wrist_1_link" />
+    <disable_collisions link1="y_dir_link" link2="L_wrist_2_link" />
+    <disable_collisions link1="y_dir_link" link2="L_wrist_3_link" /> -->
+
+    <!-- <disable_collisions link1="mecanum_base" link2="R_base_link_inertia" /> -->
+    <disable_collisions link1="mecanum_base" link2="R_shoulder_link" />
+    <!-- <disable_collisions link1="mecanum_base" link2="L_base_link_inertia" /> -->
+    <disable_collisions link1="mecanum_base" link2="L_shoulder_link" />
+
+
+    <!-- <disable_collisions link1="R_base_link_inertia" link2="R_shoulder_link" />
+    <disable_collisions link1="R_base_link_inertia" link2="R_upper_arm_link" />
+    <disable_collisions link1="R_base_link_inertia" link2="R_wrist_1_link" /> -->
+    <disable_collisions link1="R_shoulder_link" link2="R_upper_arm_link" />
+    <disable_collisions link1="R_shoulder_link" link2="R_forearm_link" />
+    <disable_collisions link1="R_shoulder_link" link2="R_wrist_1_link" />
+    <disable_collisions link1="R_shoulder_link" link2="R_wrist_2_link" />
+    <disable_collisions link1="R_upper_arm_link" link2="R_forearm_link" />
+    <disable_collisions link1="R_upper_arm_link" link2="R_wrist_1_link" />
+    <disable_collisions link1="R_upper_arm_link" link2="R_wrist_2_link" />
+    <disable_collisions link1="R_forearm_link" link2="R_wrist_1_link" />
+    <disable_collisions link1="R_wrist_1_link" link2="R_wrist_2_link" />
+    <!-- <disable_collisions link1="R_wrist_1_link" link2="R_wrist_3_link" />
+    <disable_collisions link1="R_wrist_2_link" link2="R_wrist_3_link" /> -->
+
+    <!-- <disable_collisions link1="L_base_link_inertia" link2="L_shoulder_link"  />
+    <disable_collisions link1="L_base_link_inertia" link2="L_upper_arm_link"  />
+    <disable_collisions link1="L_base_link_inertia" link2="L_wrist_1_link"  /> -->
+    <disable_collisions link1="L_shoulder_link" link2="L_upper_arm_link" />
+    <disable_collisions link1="L_shoulder_link" link2="L_forearm_link" />
+    <disable_collisions link1="L_shoulder_link" link2="L_wrist_1_link" />
+    <disable_collisions link1="L_shoulder_link" link2="L_wrist_2_link" />
+    <disable_collisions link1="L_upper_arm_link" link2="L_forearm_link" />
+    <disable_collisions link1="L_upper_arm_link" link2="L_wrist_1_link" />
+    <disable_collisions link1="L_upper_arm_link" link2="L_wrist_2_link" />
+    <disable_collisions link1="L_forearm_link" link2="L_wrist_1_link" />
+    <disable_collisions link1="L_wrist_1_link" link2="L_wrist_2_link" />
+    <!-- <disable_collisions link1="L_wrist_1_link" link2="L_wrist_3_link"  />
+    <disable_collisions link1="L_wrist_2_link" link2="L_wrist_3_link"  /> -->
+
+    <!-- <disable_collisions link1="R_base_link_inertia" link2="L_base_link_inertia" />
+    <disable_collisions link1="R_base_link_inertia" link2="L_shoulder_link" />
+    <disable_collisions link1="R_base_link_inertia" link2="L_upper_arm_link" />
+    <disable_collisions link1="R_base_link_inertia" link2="L_forearm_link" />
+    <disable_collisions link1="R_base_link_inertia" link2="L_wrist_1_link" />
+    <disable_collisions link1="R_base_link_inertia" link2="L_wrist_2_link" />
+    <disable_collisions link1="R_base_link_inertia" link2="L_wrist_3_link" />
+    <disable_collisions link1="L_base_link_inertia" link2="R_shoulder_link" />
+    <disable_collisions link1="L_base_link_inertia" link2="R_upper_arm_link" />
+    <disable_collisions link1="L_base_link_inertia" link2="R_forearm_link" />
+    <disable_collisions link1="L_base_link_inertia" link2="R_wrist_1_link" />
+    <disable_collisions link1="L_base_link_inertia" link2="R_wrist_2_link" />
+    <disable_collisions link1="L_base_link_inertia" link2="R_wrist_3_link" /> -->
+
+</robot>

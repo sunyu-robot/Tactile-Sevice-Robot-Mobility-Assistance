@@ -1,0 +1,5 @@
+dual_arm
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/dual_arm/cmake.lock /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/./cmake.lock
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/dual_arm/share/dual_arm/cmake/dual_armConfig.cmake /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/share/dual_arm/cmake/dual_armConfig.cmake
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/dual_arm/share/dual_arm/cmake/dual_armConfig-version.cmake /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/share/dual_arm/cmake/dual_armConfig-version.cmake
+/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/dual_arm/lib/pkgconfig/dual_arm.pc /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/lib/pkgconfig/dual_arm.pc

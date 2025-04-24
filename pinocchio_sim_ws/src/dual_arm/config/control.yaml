@@ -1,0 +1,15 @@
+  
+  x_dir_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: x_dir_joint
+    pid: {p: 10.0, i: 0, d: 100.0}
+
+  y_dir_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: y_dir_joint
+    pid: {p: 10.0, i: 0, d: 100.0}
+
+  z_dir_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: z_dir_joint
+    pid: {p: 10.0, i: 0, d: 100.0}
