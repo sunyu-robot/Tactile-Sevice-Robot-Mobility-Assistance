@@ -1,0 +1,6 @@
+devel_space: /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel
+install: false
+install_space: /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/install
+profile: default
+source_space: /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src
+workspace: /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws

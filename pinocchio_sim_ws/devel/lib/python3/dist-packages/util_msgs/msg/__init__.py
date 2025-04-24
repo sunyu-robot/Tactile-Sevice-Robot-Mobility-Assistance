@@ -1,1 +1,1 @@
-from ._trajectory import *
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/util_msgs/lib/python3/dist-packages/util_msgs/msg/__init__.py

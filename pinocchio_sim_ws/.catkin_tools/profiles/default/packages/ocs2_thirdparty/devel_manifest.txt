@@ -1,5 +1,0 @@
-ocs2/ocs2_thirdparty
-/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/ocs2_thirdparty/cmake.lock /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/./cmake.lock
-/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/ocs2_thirdparty/share/ocs2_thirdparty/cmake/ocs2_thirdpartyConfig-version.cmake /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/share/ocs2_thirdparty/cmake/ocs2_thirdpartyConfig-version.cmake
-/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/ocs2_thirdparty/share/ocs2_thirdparty/cmake/ocs2_thirdpartyConfig.cmake /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/share/ocs2_thirdparty/cmake/ocs2_thirdpartyConfig.cmake
-/home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/.private/ocs2_thirdparty/lib/pkgconfig/ocs2_thirdparty.pc /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/lib/pkgconfig/ocs2_thirdparty.pc

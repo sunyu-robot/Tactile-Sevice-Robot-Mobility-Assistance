@@ -1,0 +1,5 @@
+Symlinking /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/liboptimal_traj.so
+Symlinking /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory
+Symlinking /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/pkgconfig/optimal_traj.pc
+Symlinking /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/share/optimal_traj/cmake/optimal_trajConfig-version.cmake
+Symlinking /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/share/optimal_traj/cmake/optimal_trajConfig.cmake

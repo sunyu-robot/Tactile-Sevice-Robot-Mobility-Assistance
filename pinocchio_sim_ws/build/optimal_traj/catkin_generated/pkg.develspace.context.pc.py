@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "/home/sunyu/work/Tactile-Sevice-Robot-Mobilit
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "optimal_traj"
-PROJECT_SPACE_DIR = "/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel"
+PROJECT_SPACE_DIR = "/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj"
 PROJECT_VERSION = "0.0.0"

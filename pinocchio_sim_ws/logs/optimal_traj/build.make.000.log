@@ -1,0 +1,8 @@
+[35m[1mScanning dependencies of target optimal_traj[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/optimal_traj.dir/src/Trajectory.cpp.o[0m
+[ 50%] [32m[1mLinking CXX shared library /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/liboptimal_traj.so[0m
+[ 50%] Built target optimal_traj
+[35m[1mScanning dependencies of target trajectory[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.o[0m
+[100%] [32m[1mLinking CXX executable /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory[0m
+[100%] Built target trajectory

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/share/roseus/ros/util_msgs/manifest.l"
-  "/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/share/roseus/ros/util_msgs/msg/trajectory.l"
+  "/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/util_msgs/share/roseus/ros/util_msgs/manifest.l"
+  "/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/util_msgs/share/roseus/ros/util_msgs/msg/trajectory.l"
   "CMakeFiles/util_msgs_generate_messages_eus"
 )
 

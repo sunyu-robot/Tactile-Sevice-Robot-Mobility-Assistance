@@ -1,5 +1,5 @@
 _workspace_packages=( ${(Q)"${(z)$(<<\EO:_workspace_packages
-'dual_arm' 'optimal_traj' 'realsense' 'tactile_compliance' 'util_msgs'
+'dual_arm' 'optimal_traj' 'tactile_compliance' 'util_msgs'
 EO:_workspace_packages
 )}"} )
-_workspace_cache_file_path='/home/sunyu/work/beyond_endeffector/pinocchio_sim_ws/.catkin_tools/cache'
+_workspace_cache_file_path='/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/.catkin_tools/cache'

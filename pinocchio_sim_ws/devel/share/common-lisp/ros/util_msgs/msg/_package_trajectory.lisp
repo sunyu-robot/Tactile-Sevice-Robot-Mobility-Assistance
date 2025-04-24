@@ -1,10 +1,1 @@
-(cl:in-package util_msgs-msg)
-(cl:export '(FORCE_LEFT-VAL
-          FORCE_LEFT
-          FORCE_RIGHT-VAL
-          FORCE_RIGHT
-          DP_LEFT-VAL
-          DP_LEFT
-          DP_RIGHT-VAL
-          DP_RIGHT
-))
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/util_msgs/share/common-lisp/ros/util_msgs/msg/_package_trajectory.lisp

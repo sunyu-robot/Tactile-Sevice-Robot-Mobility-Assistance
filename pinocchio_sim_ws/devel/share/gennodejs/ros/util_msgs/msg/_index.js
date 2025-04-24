@@ -1,8 +1,1 @@
-
-"use strict";
-
-let trajectory = require('./trajectory.js');
-
-module.exports = {
-  trajectory: trajectory,
-};
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/util_msgs/share/gennodejs/ros/util_msgs/msg/_index.js

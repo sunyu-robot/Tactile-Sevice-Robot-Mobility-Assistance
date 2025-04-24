@@ -43,41 +43,41 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src
+CMAKE_SOURCE_DIR = /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/util_msgs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build
+CMAKE_BINARY_DIR = /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/util_msgs
 
 # Utility rule file for util_msgs_generate_messages_nodejs.
 
 # Include the progress variables for this target.
-include util_msgs/CMakeFiles/util_msgs_generate_messages_nodejs.dir/progress.make
+include CMakeFiles/util_msgs_generate_messages_nodejs.dir/progress.make
 
-util_msgs/CMakeFiles/util_msgs_generate_messages_nodejs: /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/share/gennodejs/ros/util_msgs/msg/trajectory.js
+CMakeFiles/util_msgs_generate_messages_nodejs: /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/util_msgs/share/gennodejs/ros/util_msgs/msg/trajectory.js
 
 
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/share/gennodejs/ros/util_msgs/msg/trajectory.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/share/gennodejs/ros/util_msgs/msg/trajectory.js: /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/util_msgs/msg/trajectory.msg
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/share/gennodejs/ros/util_msgs/msg/trajectory.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from util_msgs/trajectory.msg"
-	cd /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/util_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/util_msgs/msg/trajectory.msg -Iutil_msgs:/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/util_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p util_msgs -o /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/share/gennodejs/ros/util_msgs/msg
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/util_msgs/share/gennodejs/ros/util_msgs/msg/trajectory.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/util_msgs/share/gennodejs/ros/util_msgs/msg/trajectory.js: /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/util_msgs/msg/trajectory.msg
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/util_msgs/share/gennodejs/ros/util_msgs/msg/trajectory.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/util_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from util_msgs/trajectory.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/util_msgs/msg/trajectory.msg -Iutil_msgs:/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/util_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p util_msgs -o /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/util_msgs/share/gennodejs/ros/util_msgs/msg
 
-util_msgs_generate_messages_nodejs: util_msgs/CMakeFiles/util_msgs_generate_messages_nodejs
-util_msgs_generate_messages_nodejs: /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/share/gennodejs/ros/util_msgs/msg/trajectory.js
-util_msgs_generate_messages_nodejs: util_msgs/CMakeFiles/util_msgs_generate_messages_nodejs.dir/build.make
+util_msgs_generate_messages_nodejs: CMakeFiles/util_msgs_generate_messages_nodejs
+util_msgs_generate_messages_nodejs: /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/util_msgs/share/gennodejs/ros/util_msgs/msg/trajectory.js
+util_msgs_generate_messages_nodejs: CMakeFiles/util_msgs_generate_messages_nodejs.dir/build.make
 
 .PHONY : util_msgs_generate_messages_nodejs
 
 # Rule to build all files generated by this target.
-util_msgs/CMakeFiles/util_msgs_generate_messages_nodejs.dir/build: util_msgs_generate_messages_nodejs
+CMakeFiles/util_msgs_generate_messages_nodejs.dir/build: util_msgs_generate_messages_nodejs
 
-.PHONY : util_msgs/CMakeFiles/util_msgs_generate_messages_nodejs.dir/build
+.PHONY : CMakeFiles/util_msgs_generate_messages_nodejs.dir/build
 
-util_msgs/CMakeFiles/util_msgs_generate_messages_nodejs.dir/clean:
-	cd /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/util_msgs && $(CMAKE_COMMAND) -P CMakeFiles/util_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
-.PHONY : util_msgs/CMakeFiles/util_msgs_generate_messages_nodejs.dir/clean
+CMakeFiles/util_msgs_generate_messages_nodejs.dir/clean:
+	$(CMAKE_COMMAND) -P CMakeFiles/util_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
+.PHONY : CMakeFiles/util_msgs_generate_messages_nodejs.dir/clean
 
-util_msgs/CMakeFiles/util_msgs_generate_messages_nodejs.dir/depend:
-	cd /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/util_msgs /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/util_msgs /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/util_msgs/CMakeFiles/util_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : util_msgs/CMakeFiles/util_msgs_generate_messages_nodejs.dir/depend
+CMakeFiles/util_msgs_generate_messages_nodejs.dir/depend:
+	cd /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/util_msgs && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/util_msgs /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/util_msgs /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/util_msgs /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/util_msgs /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/util_msgs/CMakeFiles/util_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : CMakeFiles/util_msgs_generate_messages_nodejs.dir/depend
 

@@ -45,3 +45,4 @@
 /home/sunyu/work/beyond_endeffector/pinocchio_sim_ws/devel/share/tactile_compliance/cmake/tactile_complianceConfig-version.cmake 10
 /home/sunyu/work/beyond_endeffector/pinocchio_sim_ws/devel/share/tactile_compliance/cmake/tactile_complianceConfig.cmake 10
 /home/ubuntu/projects/beyond_endeffector/pinocchio_sim_ws/devel/./cmake.lock 238
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/./cmake.lock 10

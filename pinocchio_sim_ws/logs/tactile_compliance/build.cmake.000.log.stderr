@@ -1,0 +1,12 @@
+[31m[1mCMake Error[0m at /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake:146 (message):
+  Could NOT find Boost (missing: python38) (found version "1.71.0")
+[36mCall Stack (most recent call first):[0m
+  /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake:393 (_FPHSA_FAILURE_MESSAGE)
+  /usr/share/cmake-3.16/Modules/FindBoost.cmake:2179 (find_package_handle_standard_args)
+  /opt/ros/noetic/share/eigenpy/cmake/boost.cmake:144 (find_package)
+  /opt/ros/noetic/share/eigenpy/cmake/eigenpyConfig.cmake:149 (SEARCH_FOR_BOOST_PYTHON)
+  /usr/share/cmake-3.16/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)
+  /opt/ros/noetic/share/cmake/pinocchio/pinocchioConfig.cmake:160 (find_dependency)
+  CMakeLists.txt:32 (find_package)
+
+

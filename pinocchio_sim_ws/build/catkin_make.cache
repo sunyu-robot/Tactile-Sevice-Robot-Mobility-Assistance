@@ -1,2 +1,0 @@
-dual_arm:optimal_traj:tactile_compliance:util_msgs
--DCATKIN_WHITELIST_PACKAGES=tactile_compliance -DCATKIN_DEVEL_PREFIX=/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel -DCMAKE_INSTALL_PREFIX=/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/install -G Unix Makefiles

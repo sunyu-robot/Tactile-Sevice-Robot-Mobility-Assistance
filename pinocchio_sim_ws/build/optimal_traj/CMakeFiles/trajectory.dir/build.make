@@ -43,32 +43,32 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src
+CMAKE_SOURCE_DIR = /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/optimal_traj
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build
+CMAKE_BINARY_DIR = /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/optimal_traj
 
 # Include any dependencies generated for this target.
-include optimal_traj/CMakeFiles/trajectory.dir/depend.make
+include CMakeFiles/trajectory.dir/depend.make
 
 # Include the progress variables for this target.
-include optimal_traj/CMakeFiles/trajectory.dir/progress.make
+include CMakeFiles/trajectory.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include optimal_traj/CMakeFiles/trajectory.dir/flags.make
+include CMakeFiles/trajectory.dir/flags.make
 
-optimal_traj/CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.o: optimal_traj/CMakeFiles/trajectory.dir/flags.make
-optimal_traj/CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.o: /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/optimal_traj/src/OptimalTrajectoryNode.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object optimal_traj/CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.o"
-	cd /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/optimal_traj && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.o -c /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/optimal_traj/src/OptimalTrajectoryNode.cpp
+CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.o: CMakeFiles/trajectory.dir/flags.make
+CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.o: /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/optimal_traj/src/OptimalTrajectoryNode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/optimal_traj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.o -c /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/optimal_traj/src/OptimalTrajectoryNode.cpp
 
-optimal_traj/CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.i: cmake_force
+CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.i"
-	cd /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/optimal_traj && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/optimal_traj/src/OptimalTrajectoryNode.cpp > CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/optimal_traj/src/OptimalTrajectoryNode.cpp > CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.i
 
-optimal_traj/CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.s: cmake_force
+CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.s"
-	cd /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/optimal_traj && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/optimal_traj/src/OptimalTrajectoryNode.cpp -o CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/optimal_traj/src/OptimalTrajectoryNode.cpp -o CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.s
 
 # Object files for target trajectory
 trajectory_OBJECTS = \
@@ -77,47 +77,47 @@ trajectory_OBJECTS = \
 # External object files for target trajectory
 trajectory_EXTERNAL_OBJECTS =
 
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: optimal_traj/CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.o
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: optimal_traj/CMakeFiles/trajectory.dir/build.make
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/liboptimal_traj.so
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libtf.so
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libinteractive_markers.so
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libtf2_ros.so
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libactionlib.so
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libmessage_filters.so
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libroscpp.so
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/librosconsole.so
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/librosconsole_log4cxx.so
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/librosconsole_backend_interface.so
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libxmlrpcpp.so
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libtf2.so
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libroscpp_serialization.so
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/librostime.so
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libcpp_common.so
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: /usr/local/lib/libcasadi.so
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory: optimal_traj/CMakeFiles/trajectory.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory"
-	cd /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/optimal_traj && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/trajectory.dir/link.txt --verbose=$(VERBOSE)
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: CMakeFiles/trajectory.dir/src/OptimalTrajectoryNode.cpp.o
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: CMakeFiles/trajectory.dir/build.make
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/liboptimal_traj.so
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libtf.so
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libinteractive_markers.so
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libtf2_ros.so
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libactionlib.so
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libmessage_filters.so
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libroscpp.so
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/librosconsole.so
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/librosconsole_log4cxx.so
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/librosconsole_backend_interface.so
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libxmlrpcpp.so
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libtf2.so
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libroscpp_serialization.so
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/librostime.so
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /opt/ros/noetic/lib/libcpp_common.so
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: /usr/local/lib/libcasadi.so
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory: CMakeFiles/trajectory.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/optimal_traj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory"
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/trajectory.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-optimal_traj/CMakeFiles/trajectory.dir/build: /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/optimal_traj/trajectory
+CMakeFiles/trajectory.dir/build: /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/optimal_traj/trajectory
 
-.PHONY : optimal_traj/CMakeFiles/trajectory.dir/build
+.PHONY : CMakeFiles/trajectory.dir/build
 
-optimal_traj/CMakeFiles/trajectory.dir/clean:
-	cd /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/optimal_traj && $(CMAKE_COMMAND) -P CMakeFiles/trajectory.dir/cmake_clean.cmake
-.PHONY : optimal_traj/CMakeFiles/trajectory.dir/clean
+CMakeFiles/trajectory.dir/clean:
+	$(CMAKE_COMMAND) -P CMakeFiles/trajectory.dir/cmake_clean.cmake
+.PHONY : CMakeFiles/trajectory.dir/clean
 
-optimal_traj/CMakeFiles/trajectory.dir/depend:
-	cd /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/optimal_traj /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/optimal_traj /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/optimal_traj/CMakeFiles/trajectory.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : optimal_traj/CMakeFiles/trajectory.dir/depend
+CMakeFiles/trajectory.dir/depend:
+	cd /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/optimal_traj && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/optimal_traj /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/src/optimal_traj /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/optimal_traj /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/optimal_traj /home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/build/optimal_traj/CMakeFiles/trajectory.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : CMakeFiles/trajectory.dir/depend
 

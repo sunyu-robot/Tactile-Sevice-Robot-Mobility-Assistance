@@ -1,10 +1,1 @@
-
-(cl:in-package :asdf)
-
-(defsystem "util_msgs-msg"
-  :depends-on (:roslisp-msg-protocol :roslisp-utils :geometry_msgs-msg
-)
-  :components ((:file "_package")
-    (:file "trajectory" :depends-on ("_package_trajectory"))
-    (:file "_package_trajectory" :depends-on ("_package"))
-  ))
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/util_msgs/share/common-lisp/ros/util_msgs/msg/util_msgs-msg.asd

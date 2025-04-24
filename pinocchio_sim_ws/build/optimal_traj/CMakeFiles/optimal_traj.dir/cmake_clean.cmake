@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/liboptimal_traj.pdb"
-  "/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/lib/liboptimal_traj.so"
+  "/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/liboptimal_traj.pdb"
+  "/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/liboptimal_traj.so"
   "CMakeFiles/optimal_traj.dir/src/Trajectory.cpp.o"
 )
 

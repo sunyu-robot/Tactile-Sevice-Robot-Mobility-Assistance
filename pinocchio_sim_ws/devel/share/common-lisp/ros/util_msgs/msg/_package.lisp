@@ -1,7 +1,1 @@
-(cl:defpackage util_msgs-msg
-  (:use )
-  (:export
-   "<TRAJECTORY>"
-   "TRAJECTORY"
-  ))
-
+/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/util_msgs/share/common-lisp/ros/util_msgs/msg/_package.lisp
