@@ -34,7 +34,6 @@ catkin build util_msgs
 catkin build
 source ./devel/setup.bash
 roslaunch dual_arm gazebo.launch
-roslaunch tactile_compliance dynacmics.launch
 ```
 
 ## MODULE
