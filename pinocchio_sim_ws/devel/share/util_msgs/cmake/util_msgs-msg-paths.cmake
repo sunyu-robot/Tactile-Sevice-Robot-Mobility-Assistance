@@ -1,1 +1,0 @@
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/util_msgs/share/util_msgs/cmake/util_msgs-msg-paths.cmake

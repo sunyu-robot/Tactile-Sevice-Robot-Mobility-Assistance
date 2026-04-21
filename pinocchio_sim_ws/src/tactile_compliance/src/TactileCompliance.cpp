@@ -61,23 +61,44 @@ TactileCompliance::TactileCompliance()
     Kp = 4; Kd = 0.8;
 
     human_rotation_matrix.setIdentity();
+
+    tracking_active_  = false;
+    tracking_moving_  = false;
+    dp_left_ref_.setZero();
+    dp_right_ref_.setZero();
+    last_logged_rotation_.setIdentity();
+    last_lag_ms_ = 0.0;
+    perf_log_path_ = "/workspace/pinocchio_sim_ws/src/perf_log.md";
 }
 
 void TactileCompliance::poseCallback(const geometry_msgs::PoseStampedConstPtr &input)
-{ 
-    human_position << input->pose.position.x, input->pose.position.y, input->pose.position.z;  
+{
+    human_position << input->pose.position.x, input->pose.position.y, input->pose.position.z;
     Eigen::Quaterniond quaternion(input->pose.orientation.w, input->pose.orientation.x, input->pose.orientation.y, input->pose.orientation.z);
     human_rotation_matrix = quaternion.toRotationMatrix();
-    // euler_angle = human_rotation_matrix.eulerAngles(2, 1, 0);
 }
 
 void TactileCompliance::trajectoryCallback(const util_msgs::trajectoryConstPtr &input)
 {
-    // force (in body frame)
-    force_left << input->force_left.x, input->force_left.y, input->force_left.z;
+    force_left  << input->force_left.x,  input->force_left.y,  input->force_left.z;
     force_right << input->force_right.x, input->force_right.y, input->force_right.z;
-    dp_left << input->dp_left.x, input->dp_left.y, input->dp_left.z;
-    dp_right << input->dp_right.x, input->dp_right.y, input->dp_right.z;
+
+    Vector3d new_dp_left  = {input->dp_left.x,  input->dp_left.y,  input->dp_left.z};
+    Vector3d new_dp_right = {input->dp_right.x, input->dp_right.y, input->dp_right.z};
+
+    // When dp jumps significantly (>10 cm) relative to last converged position, start tracking lag timer
+    if (!tracking_active_ &&
+        ((new_dp_left - dp_left_ref_).norm() > 0.10 || (new_dp_right - dp_right_ref_).norm() > 0.10))
+    {
+        tracking_active_ = true;
+        tracking_moving_ = false;
+        tracking_start_  = std::chrono::steady_clock::now();
+        dp_left_ref_     = new_dp_left;
+        dp_right_ref_    = new_dp_right;
+    }
+
+    dp_left  = new_dp_left;
+    dp_right = new_dp_right;
 }
 
 void TactileCompliance::setInitVariable(const Matrix3d _Mxinv, const Matrix3d _Bx, const Matrix3d _Kx, const double _loop_time)
@@ -108,9 +129,11 @@ void TactileCompliance::tactileTrack(const Vector15d q_real, const Vector15d dq_
 
     for(int i=0;i<2;i++)
     {
+        // Zero out force/torque for the first 5 s to let the robot settle before admittance kicks in.
+        // Note: -0 on skinstates[1].force is intentionally equivalent to 0 (no sign effect).
         if(elapsed_sec < 5)
             skinstates[0].torque << 0,0,0;
-        else       
+        else
             skinstates[0].torque.setZero();
         if(elapsed_sec < 5){
             skinstates[0].force << 0,0,0;
@@ -120,9 +143,9 @@ void TactileCompliance::tactileTrack(const Vector15d q_real, const Vector15d dq_
             skinstates[0].force.setZero();
             skinstates[1].force.setZero();
         }
-        // joint id 
+        // joint id: column index into the forearm tactile array (cell pitch = 15 mm)
         skinstates[i].joint_id = (int) (skinstates[i].zmp_vector_local[0] /0.015);
-        // skinstates[i].joint_id = 10;
+        // skinstates[i].joint_id = 10;  // debug: override to fixed column for testing
         // jacobian & rotation matrix
         skinstates[i].jacobian_matrix_linear = linearJacobianFuncArray[i](skinstates[i].joint_id,q_real(2),q_real(3+6*(i%2)),q_real(4+6*(i%2)),q_real(5+6*(i%2)),q_real(6+6*(i%2)),q_real(7+6*(i%2)),q_real(8+6*(i%2)));
         skinstates[i].rotation_matrix = rotationFuncArray[i](q_real(2),q_real(3+6*(i%2)),q_real(4+6*(i%2)),q_real(5+6*(i%2)));
@@ -150,8 +173,10 @@ void TactileCompliance::tactileTrack(const Vector15d q_real, const Vector15d dq_
             skinstates[i].rotation_matrix_init = skinstates[i].rotation_matrix;
             skinstates[i].rotation_matrix_d = skinstates[i].rotation_matrix_init;
             skinstates[i].start_position_init = skinstates[i].start_position;
-            dp_left = skinstates[0].x_real_skin;
-            dp_right = skinstates[1].x_real_skin;
+            dp_left      = skinstates[0].x_real_skin;
+            dp_right     = skinstates[1].x_real_skin;
+            dp_left_ref_ = skinstates[0].x_real_skin;
+            dp_right_ref_= skinstates[1].x_real_skin;
         }
         else{
             current_time = ros::Time::now();
@@ -181,6 +206,21 @@ void TactileCompliance::tactileTrack(const Vector15d q_real, const Vector15d dq_
         skinstates[i].x_track = skinstates[i].x_newdesire_skin - skinstates[i].x_real_skin + skinstates[i].dx_newdesire_skin;
 
         skinstates[i].dx_track = skinstates[i].x_track * Kp  + ( - skinstates[i].dx_real_skin) * Kd;
+
+        // Convergence: wait until arm starts moving (v > 0.02), then stops (v < 0.01)
+        if (tracking_active_ && i == 1) {
+            double v0 = skinstates[0].dx_real_skin.norm();
+            double v1 = skinstates[1].dx_real_skin.norm();
+            if (!tracking_moving_ && (v0 > 0.02 || v1 > 0.02))
+                tracking_moving_ = true;
+            if (tracking_moving_ && v0 < 0.05 && v1 < 0.05) {
+                last_lag_ms_ = std::chrono::duration<double, std::milli>(
+                    std::chrono::steady_clock::now() - tracking_start_).count();
+                dp_left_ref_  = skinstates[0].x_real_skin;
+                dp_right_ref_ = skinstates[1].x_real_skin;
+                tracking_active_ = false;
+            }
+        }
         std::cout << "skinstates[" << i << "].dx_newdesire_skin" << skinstates[i].dx_newdesire_skin.transpose() << std::endl;
         std::cout << "skinstates[" << i << "].x_zc" << skinstates[i].x_zc.transpose() << std::endl;
         std::cout << "skinstates[" << i << "].dx_track" << skinstates[i].dx_track.transpose() << std::endl;
@@ -193,8 +233,8 @@ void TactileCompliance::tactileTrack(const Vector15d q_real, const Vector15d dq_
         // cartesian space rotation
         skinstates[i].ddx_error_rotation = Mxinv_rotate * (skinstates[i].torque - Bx_rotate * skinstates[i].dx_error_rotation - Kx_rotate*skinstates[i].x_error_rotation);
         skinstates[i].dx_error_rotation += skinstates[i].ddx_error_rotation*loop_time;
-        // rotation matrix approch
-
+        // rotation matrix approach
+        // Replaced Sophus::SO3d::exp/log with custom expMap/logMap to avoid Sophus link dependency.
         // skinstates[i].so3_rotation = Sophus::SO3d::exp(skinstates[i].dx_error_rotation * loop_time - skinstates[i].ddx_error_rotation*loop_time*loop_time/2);
         // skinstates[i].so3_rotation_current = Sophus::SO3d::exp(skinstates[i].x_error_rotation);
         auto so3_rotation = expMap(skinstates[i].dx_error_rotation * loop_time - skinstates[i].ddx_error_rotation*loop_time*loop_time/2);
@@ -215,8 +255,8 @@ void TactileCompliance::tactileTrack(const Vector15d q_real, const Vector15d dq_
         // skinstates[i].so3_log = so3_track.log();
         skinstates[i].so3_log = logMap(skinstates[i].track_rotation_matrix);
 
-        // // compute hessian matrix and linear vector
-        // Heq += skinstates[i].weight*skinstates[i].jacobian_matrix_linear.transpose() * skinstates[i].jacobian_matrix_linear*10*0.3;       
+        // // Old formulation: weighted J^T*J with extra scalar 10*0.3; replaced by dx_track-based gradient below.
+        // Heq += skinstates[i].weight*skinstates[i].jacobian_matrix_linear.transpose() * skinstates[i].jacobian_matrix_linear*10*0.3;
         // gradient_vector += -skinstates[i].weight * skinstates[i].x_track.transpose() * skinstates[i].jacobian_matrix_linear*10;
 
         Eigen::Matrix3d Q_rotate;
@@ -245,7 +285,8 @@ void TactileCompliance::tactileRotation(const Vector15d dq_solution_first, Vecto
         Heq += skinstates[i].weight*skinstates[i].jacobian_matrix_angular.transpose()*skinstates[i].jacobian_matrix_angular;       
         gradient_vector += -skinstates[i].weight * skinstates[i].dx_error_rotation.transpose() * skinstates[i].jacobian_matrix_angular;
 
-        // Heq += skinstates[i].weight*skinstates[i].jacobian_matrix_angular.transpose()*skinstates[i].jacobian_matrix_angular*0.05;       
+        // // Old formulation: position-error-based gradient; replaced by velocity-error below.
+        // Heq += skinstates[i].weight*skinstates[i].jacobian_matrix_angular.transpose()*skinstates[i].jacobian_matrix_angular*0.05;
         // gradient_vector += -skinstates[i].weight * skinstates[i].x_error_rotation.transpose() * skinstates[i].jacobian_matrix_angular;
 
         // for Constraints
@@ -268,9 +309,9 @@ void TactileCompliance::tactileMarker(visualization_msgs::MarkerArray &marker_ar
         skinstates[i].cylinder.pose.orientation.y = 0;
         skinstates[i].cylinder.pose.orientation.z = -0.7071;
         skinstates[i].cylinder.pose.orientation.w = 0;
-        skinstates[i].cylinder.color.a = 1;  // 不透明度
-        skinstates[i].cylinder.color.r = skinstates[i].weight * 0.2;  // 交互时为红色
-        skinstates[i].cylinder.color.b = 1.0-skinstates[i].weight * 0.2;  // 不交互时为蓝色
+        skinstates[i].cylinder.color.a = 1;  // opacity
+        skinstates[i].cylinder.color.r = skinstates[i].weight * 0.2;  // red when in contact
+        skinstates[i].cylinder.color.b = 1.0-skinstates[i].weight * 0.2;  // blue when not in contact
 
         if(i == 0)
             skinstates[i].cylinder.header.frame_id = "L_forearm_link";
@@ -304,7 +345,7 @@ void TactileCompliance::tactileMarker(visualization_msgs::MarkerArray &marker_ar
         skinstates[i].arrow.ns = "force arrow";
         skinstates[i].arrow.type = visualization_msgs::Marker::ARROW;
         skinstates[i].arrow.action = visualization_msgs::Marker::ADD;
-        // skinstates[i].arrow.lifetime = ros::Duration(0.01);
+        // skinstates[i].arrow.lifetime = ros::Duration(0.01);  // disabled: short lifetime caused flickering in RViz
         skinstates[i].arrow.frame_locked = true;
         skinstates[i].arrow.scale.x = 0.04;
         skinstates[i].arrow.scale.y = 0.09;

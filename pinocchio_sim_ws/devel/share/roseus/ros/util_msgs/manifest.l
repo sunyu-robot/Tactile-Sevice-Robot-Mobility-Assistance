@@ -1,1 +1,0 @@
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/util_msgs/share/roseus/ros/util_msgs/manifest.l

@@ -1,12 +1,11 @@
 /**
  * @file CriticalPoint.hpp
- * @brief get critical point and publish marker
- * @author Yu Sun,Cong Xiao
+ * @brief Collision sphere management for the dual-arm robot
+ * @author Yu Sun, Cong Xiao
  * @maintainer Lipeng Chen
  * @version 0.1.0
  * @date 10.28 2023
  */
-
 #pragma once
 
 #include <ros/ros.h>
@@ -22,30 +21,28 @@ using namespace BodyMath;
 class CriticalPoint
 {
 public:
-    // Constructor
     CriticalPoint() = default;
 
     /**
-    * @brief init feature of each critical points
-    * @detail
-    *  init position and jacobian matrix of each critical points
-    * @param[in] &input        joints' position\
-    * @param[in] &input        struct of sphere
-    */
+     * @brief Assign radii and collision-check pairs to all 35 spheres.
+     *
+     * Spheres 0-13: right arm links.
+     * Spheres 14-27: left arm links.
+     * Spheres 28-34: base / torso.
+     * Adjacent spheres on the same chain are excluded from mutual checking
+     * to avoid false positives at joints.
+     */
     void initsphere(sphere (&point_sphere)[35]);
 
     /**
-    * @brief update feature of each critical points
-    * @detail
-    *  update position and jacobian matrix of each critical points
-    * @param[in] &input        joints' position
-    */
-    void updatedata(const Vector15d q, sphere (&point_sphere)[35]);
-    
+     * @brief Recompute sphere positions and Jacobians from current joint angles.
+     * @param q_real  Full 15-DOF joint position vector.
+     */
+    void updatedata(const Vector15d q_real, sphere (&point_sphere)[35]);
+
+    // Populate marker_array with green semi-transparent spheres for RViz.
     void pointMarker(visualization_msgs::MarkerArray &marker_array, const sphere* point_sphere);
 
 private:
-    // marker to publish
     visualization_msgs::Marker sphere_marker[35];
-    
 };

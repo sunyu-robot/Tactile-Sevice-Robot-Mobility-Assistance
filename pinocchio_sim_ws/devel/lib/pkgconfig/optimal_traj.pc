@@ -1,1 +1,0 @@
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/lib/pkgconfig/optimal_traj.pc

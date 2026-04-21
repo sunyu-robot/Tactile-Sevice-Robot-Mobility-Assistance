@@ -1,1 +1,0 @@
-/home/sunyu/work/Tactile-Sevice-Robot-Mobility-Assistance/pinocchio_sim_ws/devel/.private/optimal_traj/share/optimal_traj/cmake/optimal_trajConfig-version.cmake

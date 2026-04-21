@@ -1,0 +1,9 @@
+[submodule "dependecies/casadi"]
+	path = dependecies/casadi
+	url = https://github.com/casadi/casadi.git
+[submodule "dependecies/osqp"]
+	path = dependecies/osqp
+	url = https://github.com/oxfordcontrol/osqp.git
+[submodule "dependecies/osqp-eigen"]
+	path = dependecies/osqp-eigen
+	url = https://github.com/robotology/osqp-eigen.git
