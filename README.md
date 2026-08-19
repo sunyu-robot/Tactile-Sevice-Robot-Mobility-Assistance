@@ -18,8 +18,8 @@ A ROS Noetic simulation of a dual-arm walking-assistive robot with whole-body ad
 The easiest way to run this project is with Docker, which handles all dependencies automatically.
 
 ```bash
-git clone --recurse-submodules https://github.com/sunyu-robot/Tactile-Sevice-Robot-Mobility-Assistance.git
-cd Tactile-Sevice-Robot-Mobility-Assistance
+git clone --recurse-submodules https://github.com/sunyu-robot/Tactile-Service-Robot-Mobility-Assistance.git
+cd Tactile-Service-Robot-Mobility-Assistance
 
 docker compose build
 ./run.sh

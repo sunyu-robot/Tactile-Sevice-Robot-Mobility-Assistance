@@ -1,7 +1,8 @@
-# ROS workspace build artifacts
+# ROS/catkin workspace build artifacts
 pinocchio_sim_ws/build/
 pinocchio_sim_ws/devel/
 pinocchio_sim_ws/install/
+pinocchio_sim_ws/log/
 pinocchio_sim_ws/logs/
 pinocchio_sim_ws/.catkin_workspace
 
@@ -12,32 +13,45 @@ pinocchio_sim_ws/.catkin_tools/
 dependecies/*/build/
 dependecies/*/install/
 
-# Docker
-.dockerignore
-
-# Python
+# Python caches and local environments
 __pycache__/
 *.py[cod]
 *.egg-info/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
 
-# CMake
+# CMake generated files
 CMakeCache.txt
 CMakeFiles/
 cmake_install.cmake
-Makefile
-*.cmake
-!*Config.cmake
-!*config.cmake
+compile_commands.json
+install_manifest.txt
+CTestTestfile.cmake
+Testing/
 
 # Compiled binaries
 *.o
 *.so
 *.a
 *.out
+*.dylib
+*.dll
+*.exe
+
+# ROS runtime data
+*.bag
+*.bag.active
+*.log
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
 .DS_Store
